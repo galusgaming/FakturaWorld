@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="690.0" maxWidth="1219.0" minHeight="690.0" minWidth="1219.0" prefHeight="690.0" prefWidth="1219.0" scaleShape="false" style="-fx-background-color: #00587a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.galusgaming.fakturaworld.controllers.LoginController">
+   <children>
+      <AnchorPane layoutX="602.0" prefHeight="690.0" prefWidth="617.0" style="-fx-background-color: white;">
+         <children>
+            <Button fx:id="loginBtn" layoutX="59.0" layoutY="436.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="47.0" prefWidth="499.0" style="-fx-background-color: #0091ff; -fx-border-color: #fff; -fx-border-radius: 10; -fx-background-radius: 10;" text="Zaloguj się" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Roboto Black" size="24.0" />
+               </font>
+            </Button>
+            <TextField fx:id="login" alignment="CENTER" layoutX="163.0" layoutY="253.0" prefHeight="37.0" prefWidth="292.0" promptText="Nazwa użytkownika" style="-fx-background-radius: 30; -fx-background-color: #c9c9c9;">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="163.0" layoutY="327.0" prefHeight="37.0" prefWidth="292.0" promptText="Hasło" style="-fx-background-color: #c9c9c9; -fx-background-radius: 30;">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+            </PasswordField>
+            <Label alignment="CENTER" layoutX="246.0" layoutY="216.0" prefHeight="37.0" prefWidth="126.0" text="Nazwa użytkownika" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="246.0" layoutY="290.0" prefHeight="37.0" prefWidth="126.0" text="Hasło" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="14.0" prefHeight="70.0" prefWidth="558.0" text="FakturaWorld">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="84.0" prefHeight="70.0" prefWidth="558.0" text="Logowanie">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="154.0" prefHeight="47.0" prefWidth="377.0" style="-fx-text-fill: red;" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
