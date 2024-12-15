@@ -8,7 +8,7 @@
    <children>
       <AnchorPane layoutX="602.0" prefHeight="690.0" prefWidth="617.0" style="-fx-background-color: white;">
          <children>
-            <Button fx:id="loginBtn" layoutX="59.0" layoutY="436.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="47.0" prefWidth="499.0" style="-fx-background-color: #0091ff; -fx-border-color: #fff; -fx-border-radius: 10; -fx-background-radius: 10;" text="Zaloguj się" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <Button id="btnLogin" fx:id="btnLogin" layoutX="59.0" layoutY="436.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="47.0" prefWidth="499.0" text="Zaloguj się" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Roboto Black" size="24.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="154.0" prefHeight="47.0" prefWidth="377.0" style="-fx-text-fill: red;" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="154.0" prefHeight="47.0" prefWidth="377.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
                <font>
                   <Font name="Roboto" size="14.0" />
                </font></Label>
