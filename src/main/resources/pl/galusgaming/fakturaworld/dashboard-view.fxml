@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.galusgaming.fakturaworld.controllers.DashboardController">
-    <VBox spacing="20" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-        <MenuBar>
-            <Menu text="File">
-                <MenuItem text="New" onAction="#onNewFile"/>
-                <MenuItem text="Open" onAction="#onOpenFile"/>
-                <MenuItem text="Save" onAction="#onSaveFile"/>
-                <SeparatorMenuItem/>
-                <MenuItem text="Exit" onAction="#onExit"/>
-            </Menu>
-            <Menu text="Edit">
-                <MenuItem text="Cut" onAction="#onCut"/>
-                <MenuItem text="Copy" onAction="#onCopy"/>
-                <MenuItem text="Paste" onAction="#onPaste"/>
-            </Menu>
-            <Menu text="View">
-                <MenuItem text="Dashboard" onAction="#onViewDashboard"/>
-                <MenuItem text="Other Page" onAction="#onViewOtherPage"/>
-            </Menu>
-        </MenuBar>
-        <VBox spacing="20" styleClass="dashboard" VBox.vgrow="ALWAYS">
-            <HBox spacing="10" styleClass="header">
-                <Label styleClass="header-title" text="Invoice Management Dashboard" />
-            </HBox>
-            <HBox spacing="10" styleClass="search-bar">
-                <TextField fx:id="searchField" promptText="Search invoices..." styleClass="search-field" HBox.hgrow="ALWAYS" />
-                <Button onAction="#onSearchButtonClick" styleClass="search-button" text="Search" />
-            </HBox>
-            <TableView fx:id="invoiceTable" styleClass="invoice-table" VBox.vgrow="ALWAYS">
-                <TableColumn fx:id="invoiceNumberColumn" text="Invoice Number" />
-                <TableColumn fx:id="customerNameColumn" text="Customer Name" />
-                <TableColumn fx:id="amountColumn" text="Amount" />
-                <TableColumn fx:id="statusColumn" text="Status" />
-            </TableView>
-            <HBox spacing="10" styleClass="footer">
-                <Button onAction="#onAddInvoiceButtonClick" styleClass="footer-button" text="Add Invoice" />
-                <Button onAction="#onEditInvoiceButtonClick" styleClass="footer-button" text="Edit Invoice" />
-                <Button onAction="#onDeleteInvoiceButtonClick" styleClass="footer-button" text="Delete Invoice" />
-            </HBox>
-        </VBox>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.galusgaming.fakturaworld.controllers.DashboardController">
+    <VBox alignment="CENTER" spacing="20" styleClass="main-menu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="header-title" text="Main Menu" style="-fx-text-fill: #000;" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="btn-box">
+         <children>
+              <Button fx:id="invoice" onAction="#onManageInvoices" text="Manage Invoices">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-primary" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+              <Button fx:id="client" onAction="#onManageClients" text="Manage Clients">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-secondary" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+              <Button fx:id="product" onAction="#onManageProducts" text="Manage Products">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-success" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+        <Label styleClass="news-title" text="News and Updates" />
+        <ListView fx:id="newsList" styleClass="news-list" />
     </VBox>
 </AnchorPane>

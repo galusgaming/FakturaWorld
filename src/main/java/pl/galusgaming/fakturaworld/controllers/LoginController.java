@@ -12,6 +12,8 @@ import org.kordamp.bootstrapfx.BootstrapFX;
 import pl.galusgaming.fakturaworld.HelloApplication;
 import pl.galusgaming.fakturaworld.services.LoginService;
 
+import static java.lang.Thread.sleep;
+
 public class LoginController {
     @FXML
     private Label errorLabel;
@@ -64,6 +66,7 @@ public class LoginController {
             errorLabel.setText("Login successful!");
 
             try {
+                sleep(1000);
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dashboard-view.fxml"));
                 String css = HelloApplication.class.getResource("dashboard.css").toExternalForm();
                 HelloApplication.getStage().getScene().getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());

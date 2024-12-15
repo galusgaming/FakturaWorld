@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.galusgaming.fakturaworld.controllers.InvoiceController">
+    <VBox spacing="20" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem onAction="#onNewFile" text="New" />
+                <MenuItem onAction="#onOpenFile" text="Open" />
+                <MenuItem onAction="#onSaveFile" text="Save" />
+                <SeparatorMenuItem />
+                <MenuItem onAction="#onExit" text="Exit" />
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem onAction="#onCut" text="Cut" />
+                <MenuItem onAction="#onCopy" text="Copy" />
+                <MenuItem onAction="#onPaste" text="Paste" />
+            </Menu>
+            <Menu text="View">
+                <MenuItem onAction="#onViewDashboard" text="Dashboard" />
+                <MenuItem onAction="#onViewOtherPage" text="Other Page" />
+            </Menu>
+        </MenuBar>
+        <VBox spacing="20" styleClass="dashboard" VBox.vgrow="ALWAYS">
+         <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#OnBtnReturnClick" text="return">
+            <styleClass>
+               <String fx:value="btn-sm" />
+               <String fx:value="btn-primary-sm" />
+            </styleClass></Button>
+            <HBox spacing="10" styleClass="header">
+                <Label styleClass="header-title" text="Invoice Management Dashboard" />
+            </HBox>
+            <HBox spacing="10" styleClass="search-bar">
+                <TextField fx:id="searchField" promptText="Search invoices..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+                <Button onAction="#onSearchButtonClick" styleClass="search-button" text="Search" />
+            </HBox>
+            <TableView fx:id="invoiceTable" styleClass="invoice-table" VBox.vgrow="ALWAYS">
+                <TableColumn fx:id="invoiceNumberColumn" text="Invoice Number" />
+                <TableColumn fx:id="customerNameColumn" text="Customer Name" />
+                <TableColumn fx:id="amountColumn" text="Amount" />
+                <TableColumn fx:id="statusColumn" text="Status" />
+            </TableView>
+            <HBox spacing="10" styleClass="footer">
+                <Button onAction="#onAddInvoiceButtonClick" styleClass="footer-button" text="Add Invoice" />
+                <Button onAction="#onEditInvoiceButtonClick" styleClass="footer-button" text="Edit Invoice" />
+                <Button onAction="#onDeleteInvoiceButtonClick" styleClass="footer-button" text="Delete Invoice" />
+            </HBox>
+        </VBox>
+    </VBox>
+</AnchorPane>

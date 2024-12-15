@@ -2,75 +2,52 @@ package pl.galusgaming.fakturaworld.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+import pl.galusgaming.fakturaworld.HelloApplication;
 
 public class DashboardController {
-    @FXML
-    private TextField searchField;
-    @FXML
-    private TableView<?> invoiceTable;
-    @FXML
-    private TableColumn<?, ?> invoiceNumberColumn;
-    @FXML
-    private TableColumn<?, ?> customerNameColumn;
-    @FXML
-    private TableColumn<?, ?> amountColumn;
-    @FXML
-    private TableColumn<?, ?> statusColumn;
-    @FXML
-    private Button addInvoiceButton;
-    @FXML
-    private Button editInvoiceButton;
-    @FXML
-    private Button deleteInvoiceButton;
+
 
     @FXML
-    private void onSearchButtonClick() {
-        // Handle search button click
+    private ListView<String> newsList;
+
+    @FXML
+    private void onManageInvoices(ActionEvent event) {
+        loadView("invoice-view.fxml", "invoice.css");
     }
 
     @FXML
-    private void onAddInvoiceButtonClick() {
-        // Handle add invoice button click
+    private void onManageClients(ActionEvent event) {
+        loadView("client-view.fxml", "client.css");
     }
 
     @FXML
-    private void onEditInvoiceButtonClick() {
-        // Handle edit invoice button click
+    private void onManageProducts(ActionEvent event) {
+        loadView("product-view.fxml", "product.css");
+    }
+
+    private void loadView(String fxmlFile, String cssFile) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFile));
+            String css = HelloApplication.class.getResource(cssFile).toExternalForm();
+            HelloApplication.getStage().getScene().getStylesheets().add(css);
+            HelloApplication.getStage().getScene().setRoot(fxmlLoader.load());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    private void onDeleteInvoiceButtonClick() {
-        // Handle delete invoice button click
-    }
-
-    public void onNewFile(ActionEvent actionEvent) {
-    }
-
-    public void onOpenFile(ActionEvent actionEvent) {
-    }
-
-    public void onSaveFile(ActionEvent actionEvent) {
-    }
-
-    public void onExit(ActionEvent actionEvent) {
-    }
-
-    public void onCut(ActionEvent actionEvent) {
-    }
-
-    public void onCopy(ActionEvent actionEvent) {
-    }
-
-    public void onPaste(ActionEvent actionEvent) {
-    }
-
-    public void onViewDashboard(ActionEvent actionEvent) {
-    }
-
-    public void onViewOtherPage(ActionEvent actionEvent) {
+    public void initialize() {
+        
+        newsList.getItems().addAll(
+                "Update 1.0: New features added",
+                "Update 1.1: Bug fixes and improvements",
+                "Update 1.2: Performance enhancements"
+        );
     }
 }
